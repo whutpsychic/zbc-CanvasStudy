@@ -8,20 +8,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "zbc-CanvasStudy.git", "http
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50733"
-		Debug.AspNetCompiler.PhysicalPath = "D:\超哥js库\000.github\zbc-CanvasStudy.git\"
+		Debug.AspNetCompiler.PhysicalPath = "..\zbc-CanvasStudy.git\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50733\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_50733"
-		Release.AspNetCompiler.PhysicalPath = "D:\超哥js库\000.github\zbc-CanvasStudy.git\"
+		Release.AspNetCompiler.PhysicalPath = "..\zbc-CanvasStudy.git\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50733\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "D:\超哥js库\000.github\zbc-CanvasStudy.git\"
+		SlnRelativePath = "..\zbc-CanvasStudy.git\"
 	EndProjectSection
 EndProject
 Global
