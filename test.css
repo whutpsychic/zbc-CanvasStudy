@@ -6,14 +6,28 @@
 html{}
 .container{
     width:1330px;height:800px;border:solid 1px #ccc;z-index:0;
-    /*background-image:url(images/xiaofang.png)*/
 }
 
 body{
-    z-index:2;
+
 }
 
+select,input{
+    box-sizing:border-box;
+    width:100px;
+    height:30px;
+    border:solid 1px #ccc;
+}
 
+input[type=button]{
+
+}
+
+input[type=checkbox]{
+    width:20px;
+    height:20px;
+    margin-top:10px;
+}
 
 
 #div1 {

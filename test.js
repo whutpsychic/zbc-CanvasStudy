@@ -1,4 +1,4 @@
-﻿
+﻿/*何亦辰/api/DcsalarmData/GetPersonPosition   PERSON_POSITION*/
 require.config({
 	paths:config.modulePaths
 })
@@ -9,30 +9,50 @@ define(function(require){
 
 $(function(){
     
-    var canvas = document.getElementById('c1'),
+    var canvas = document.getElementById('canvas'),
         context = canvas.getContext('2d');
 
     /*视大小而定*/
-    canvas.width = 800;
-    canvas.height = 400;
-    /************/
+    var parent = document.getElementById('c1'),
 
-    var gradient = context.createLinearGradient(0, 0, 550, 550);
+        //自适应宽高度变量
+        pW = parent.clientWidth.toFixed(0),
+        pH = parent.clientHeight.toFixed(0);
 
-    console.log(context);
-    console.log(gradient);
+    canvas.width = pW;
+    canvas.height = pH;
 
-    gradient.addColorStop(0, 'blue');
-    gradient.addColorStop(0.25, '#fff');
-    gradient.addColorStop(0.5, 'purple');
-    gradient.addColorStop(0.75, 'red');
-    gradient.addColorStop(1, 'yellow');
 
-    context.fillStyle = '#fff';
-    context.fillText('hello',600, 100);
+    var eraseAllButton = document.getElementById('btn'),
+        strokeStyleSelect = document.getElementById('select1'),
+        guidewireCheckbox = document.getElementById('in1'),
+        drawingSurfaceImageData,
+        mousedown = {},
+        rubberbandRect = {},
+        dragging = false,
+        guidewires = guidewireCheckbox.checked;
 
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    //Functions
+    function drawGrid(color, stepx, stepy) {
+
+    }
+
+    function windowToCanvas(x, y) {
+        var bbox = canvas.getBoundingClientRect();
+        return {
+            x: x - bbox.left * (canvas.width / bbox.width),
+            y: y - bbox.top * (canvas.height / bbox.height)
+        };
+    }
+
+    
+    function saveDrawingSurface() {
+        drawingSurfaceImageData = context.getImageData(0, 0, canvas.width, cancas.height);
+    }
+
+    function restoreDrawingSurface() {
+        context.putImageData(drawingSuiface, 0, 0);
+    }
 
 
 

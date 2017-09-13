@@ -15,8 +15,10 @@ gradient.addColorStop(0.5, 'purple');
 gradient.addColorStop(0.75, 'red');
 gradient.addColorStop(1, 'yellow');
 
-context.fillStyle = '#fff';
-context.fillText('hello', 600, 100);
-
+//背景
 context.fillStyle = gradient;
 context.fillRect(0, 0, canvas.width, canvas.height);
+
+//文字
+context.fillStyle = '#fff';
+context.fillText('hello', 600, 100);

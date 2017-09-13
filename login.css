@@ -1,0 +1,265 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    min-width: 1280px;
+    min-height: 768px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(0deg,#0198A9,#0F3155);
+    
+}
+
+ul {
+    list-style: none;
+}
+
+select, input {
+    box-sizing: border-box;
+    /*width: 100%;*/
+    height: 3em;
+    border: solid 1px skyblue;
+    background-color: transparent;
+    
+}
+
+div {
+    display: inline-block;
+    /*border: solid 1px #fff;*/
+}
+
+.top-logos {
+    /*height:5em;*/
+    width: 100%;
+}
+
+.lefttop-logo {
+    width: 40em;
+    height: 10em;
+    float: left;
+    margin-left: 1em;
+    border: solid 1px #fff;
+}
+
+.righttop-logo {
+    width: 10em;
+    height: 10em;
+    float: right;
+    margin-right: 1em;
+    border: solid 1px #fff;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    height: 2.2em;
+    font-size: 3em;
+    font-family: '微软雅黑';
+    position: relative;
+    font-weight: 800;
+    color: #fff;
+    -moz-user-select: none;
+    user-select: none;
+    transition: 1.5s;
+}
+
+#title1 {
+    top: 0.8em;
+    left:0.5em;
+    margin-bottom: 0.8em;
+}
+#title2 {
+    top: 1.3em;
+    left:-0.5em;
+    position: absolute;
+    /*文字倒影*/
+    -webkit-box-reflect: below -1.9em -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.4)),to(rgba(255,255,255,0.4)));
+}
+    
+    
+    
+    .title[data-text]::after {
+        content: attr(data-text);
+        color: #4AD6F2;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        left: 0;
+        top: 0;
+        -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#4AD6F2), to(rgba(0, 0, 255, 0)));
+    }
+
+
+
+
+
+
+
+.contents {
+    margin-left: 32%;
+    margin-top: 8em;
+    width: 40em;
+    position:relative;
+
+}
+
+    .contents li {
+        margin: 0.8em 26%;
+        width: 17em;
+    }
+
+        .contents li.checking {
+            margin: 0.8em 26%;
+        }
+
+        .contents li.checking p{
+            color:#fff;
+            display:inline-block;
+        }
+
+    .contents input {
+        clear: both;
+        width: 100%;
+        text-indent:0.5em;
+        color:#fff;
+        background-color:rgba(0,59,91,0.6)
+    }
+
+    /*placeholder样式*/
+::-webkit-input-placeholder {
+    color: skyblue;
+}
+
+　 ::-moz-placeholder {
+    color: skyblue;
+}
+
+:-ms-input-placeholder {
+    color: skyblue;
+}
+
+
+
+input[type=checkbox] {
+    position: absolute;
+    width: auto;
+    cursor: pointer;
+    opacity:0;
+}
+
+
+input[type="checkbox"] + p::before {
+    content: '\a0';
+    display: inline-block;
+    vertical-align: .2em;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    border-radius: .2em;
+    background: silver;
+    text-indent: .15em;
+    line-height: .65em;
+}
+
+input[type="checkbox"]:checked + p::before {
+    content: '\2713';
+    color:black;
+    background: orange;
+}
+
+input[type="checkbox"]:focus + p::before {
+    box-shadow: 0 0 .1em .1em #58a;
+}
+
+input[type="checkbox"]:disabled + p::before {
+    background: gray;
+    box-shadow: none;
+    color: #555;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+.button {
+    cursor: pointer;
+    background-color: orange;
+    font-size:1em;
+    width: 100%;
+    height: 2em;
+    line-height:2em;
+    border-radius:0.25em;
+
+    text-align:center;
+    user-select: none;
+}
+
+    .button:hover {
+        background-color: yellow;
+    }
+
+    .button:active {
+        background-color: #FF851E;
+    }
+
+
+
+
+
+
+
+    /*.contents input ::-webkit-input-placeholder {
+    color: red;
+}*/
+    /*
+/*.contents input ::-moz-placeholder {
+    color: #ccc;
+}*/ /*. /*.contents input :-ms-input-placeholder {
+    color: #ccc;
+}*/
+    /*p {
+    display: inline-block;
+    font-family: '微软雅黑';
+    font-size: 3em;
+    position: relative;
+    font-weight: 800;
+    color: #fff;
+    -moz-user-select:none;
+    user-select: none;
+
+    
+    -webkit-box-reflect: below -8px -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0)),to(rgba(255,255,255,0.4)));
+}
+
+    p[data-text]::after {
+        content: attr(data-text);
+        color: #4AD6F2;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        -webkit-mask-image: -webkit-gradient(linear, 0 0, 0 bottom, from(skyblue), to(rgba(0, 0, 255, 0)));
+    }*/
+    /*火狐下倒影*/
+    /*p[data-text]:before {
+        content: attr(data-text);
+        background: -moz-linear-gradient(top, white, white 30%, rgba(0,0,0,0) 65%, rgba(255,255,255,0.7)),-moz-element(#pp)bottom left no-repeat;
+        -moz-transform: scaleY(-1);
+        position: absolute;
+        height: 308px;
+        width: 611px;
+        top: 1.2em;
+        left: 0px;
+    }*/

@@ -7,27 +7,38 @@
     <link href="test.css" rel="stylesheet" />
     <style>
         #c1{
-            width:800px;
-            height:400px;
-            margin-left:300px;
-            margin-top:100px;
+            width:60%;
+            height:50%;
+            margin-left:12%;
+            margin-top:10%;
             border:solid 1px #ccc;
             /*background:#389edc;*/
             /*color:#fff;*/
+            background-color:rgba(126,123, 78,0.6)
         }
     </style>
 </head>
 <body >
 
     <div class="container" id="container" style="">
-
-        <!--<div id="div1">
-            <dl>
-                <dd></dd>
-                <dd></dd>
-            </dl>
-        </div>-->
-        <canvas id="c1">xxxxxxx</canvas>
+        Stroke Colors:
+        <select id="select1">
+            <option>red</option>
+            <option>green</option>
+            <option>blue</option>
+            <option>orange</option>
+            <option>cornflowerblue</option>
+            <option>goldenrod</option>
+            <option>navy</option>
+            <option>purple</option>
+        </select>
+        Guidewires:
+        <input id="in1" type="checkbox" checked/>
+        <input id="btn" type="button" value="Erase All" />
+        <div id="c1">
+            <canvas id="canvas">xxxxxxx</canvas>
+        </div>
+        
     </div>
  
     <script>
