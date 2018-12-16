@@ -1,0 +1,65 @@
+* table {
+
+	border-collapse:collapse;
+}
+
+* tr{	
+	cursor:pointer;
+
+}
+
+
+
+* th {
+	color: darkblue;
+	background-color:yellowgreen;
+	/*border-bottom:1px #ccc solid;*/
+	/*border-right:1px solid #ccc;*/
+	/*border:1px solid #ccc;*/
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px #ccc solid;
+	cursor:context-menu;
+}
+
+* td {
+	color: red;
+	text-align:center;
+	font-size:12px;
+	/*border-bottom:1px #ccc solid;*/
+	/*border-right:1px solid #ccc;*/
+	/*border:1px solid #ccc;*/
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px #ccc solid;
+
+}
+
+
+
+/*style of odd td line*/
+tr.odd:hover{
+	background:#cee;
+}
+
+/*style of even td line*/
+tr.even{
+	background-color: #eee;
+}
+
+tr.even:hover{
+	background-color: #cee;
+}
+
+tr.tjTb-grid-onSelect{
+	background-color:yellow
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,344 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+}
+
+.container {
+    width: 1900px;
+    height: 800px;
+    border: solid 1px #ccc;
+}
+
+body {
+}
+
+ul {
+    list-style: none;
+}
+
+select, input {
+    box-sizing: border-box;
+    width: 100px;
+    height: 30px;
+    border: solid 1px #ccc;
+}
+
+
+.board {
+    background-color: #091E31;
+    border: solid;
+    border-image-source: url(images/zborder.png);
+    border-image-slice: 26;
+    border-image-width: 32px;
+    border-image-outset: 1;
+    border-image-repeat: round;
+    position: relative;
+    
+}
+
+
+
+.board-title {
+    height: 60px;
+    background-color: #14335E;
+    text-align: center;
+}
+
+    .board-title p {
+        line-height: 50px;
+        color: #7CA3E6;
+        font-size: 40px;
+        text-shadow: 3px 3px 3px #000, -3px 3px 3px #000, 3px -3px 3px #000, -3px -3px 3px #000;
+        user-select:none;
+    }
+
+#board {
+    margin: 30px;
+    height: 800px;
+}
+
+.board-content {
+   height:600px;
+   width:100%;
+}
+
+
+#canvas {
+    width: 100%;
+    height: 740px;
+    position: absolute;
+    z-index: 7;
+}
+
+/*********canvas里面的箭头*********/
+.arrow {border:none;position:absolute;}
+
+    .arrow.totop {
+        width: 12px;
+        height: 10px;
+        background: linear-gradient(-59deg, #389edc 50%,transparent 0);
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+    }
+        .arrow.totop:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 6px;
+            width: 12px;
+            height: 10px;
+            background: linear-gradient(59deg, #389edc 50%,transparent 0);
+            background-repeat: no-repeat;
+            background-size: 50% 100%;
+        }
+
+    .arrow.tobottom {
+        width: 12px;
+        height: 10px;
+        background: linear-gradient(59deg, transparent 50%,#389edc 0);
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+    }
+        .arrow.tobottom:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 6px;
+            width: 12px;
+            height: 10px;
+            background: linear-gradient(-59deg, transparent 50%,#389edc 0);
+            background-repeat: no-repeat;
+            background-size: 50% 100%;
+        }
+    .arrow.toleft {
+        width: 10px;
+        height: 12px;
+        background: linear-gradient(149deg, transparent 50%,#389edc 0);
+        background-size: 100% 50%;
+        background-repeat: no-repeat;
+    }
+        .arrow.toleft:before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 10px;
+            height: 12px;
+            background: linear-gradient(31deg, transparent 50%,#389edc 0);
+            background-repeat: no-repeat;
+            background-size: 100% 50%;
+        }
+    .arrow.toright {
+        width: 10px;
+        height: 12px;
+        background: linear-gradient(-149deg, transparent 50%,#389edc 0);
+        background-size: 100% 50%;
+        background-repeat: no-repeat;
+    }
+        .arrow.toright:before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 10px;
+            height: 12px;
+            background: linear-gradient(-31deg, transparent 50%,#389edc 0);
+            background-repeat: no-repeat;
+            background-size: 100% 50%;
+        }
+/*********canvas里面的箭头*********/
+
+
+.over-canvas{
+    z-index:8;
+    position:absolute;
+}
+    .over-canvas.div {
+        user-select:none;
+        background-color: #001435;
+        border: solid 1px #389edc;
+        color: #fff;
+        cursor:pointer;
+        transition: .5s;
+    }
+
+    .over-canvas.div:hover {
+        background-color: skyblue;
+        border-width:5px;
+        color:#000;
+        transition:.5s;
+    }
+
+    .over-canvas.right-grid {
+        background: linear-gradient(0deg, #00214C 35px,#00183C 35px);
+        border: solid 1px skyblue;
+        background-size: 100% 70px;
+        overflow: hidden;
+        transition: 1s;
+        transition-timing-function:linear;
+    }
+
+    .over-canvas p.title {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .over-canvas p.subtitle {
+        clear: both;
+        font-size: 16px;
+    }
+
+    .over-canvas p {
+        font-size: 12px;
+    }
+
+    .over-canvas.right-grid li {
+        /*height: 35px;*/
+        word-wrap: break-word;
+        min-height: 35px;
+        line-height: 35px;
+        padding: 0 10px;
+        min-width: 0;
+        text-indent:2em;
+        /*white-space: nowrap;*/
+        /*overflow: hidden;*/
+        /*text-overflow: ellipsis;*/
+        /*background-color: #00183C;*/
+        color: #fff;
+        border-top: solid 0px skyblue;
+        border-right: solid 0px skyblue;
+        border-left: solid 0px skyblue;
+        border-bottom: solid 0px skyblue;
+        /*transition: 1s;*/
+        transition-timing-function: linear;
+        cursor: pointer;
+    }
+
+        .over-canvas.right-grid li.even {
+            /*background-color: #00214C;*/
+        }
+    /*.over-canvas.right-grid ul li:first-child {
+        
+        
+    }*/
+
+
+        .over-canvas.right-grid li:hover {
+            /*border-top: solid 1px skyblue;
+            border-right: solid 1px skyblue;
+            border-left: solid 1px skyblue;
+            border-bottom: solid 1px skyblue;*/
+            color:red;
+            transition: .3s;
+        }
+
+    .over-canvas.right-grid nobr {
+        line-height: 35px;
+        font-size: 16px;
+        color: #fff;
+        /*white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;*/
+    }
+.right-grid-title {
+    height: 35px;
+    border-bottom: solid 1px skyblue;
+    padding: 0 10px;
+    background-color: #001435;
+}
+.right-grid-title p{
+    font-size:20px;
+    line-height:35px;
+    color:#fff;
+}
+
+
+
+#div1 {
+        top: 12%;
+        left: 3%;
+    }
+#div2 {
+    top: 16%;
+    left: 28%;
+}
+#div3 {
+    top: 16%;
+    left: 54%;
+}
+#div4 {
+    top: 41%;
+    left: 3%;
+}
+#div5 {
+    top: 45%;
+    left: 28%;
+}
+#div6 {
+    top: 45%;
+    left: 54%;
+}
+#div7 {
+    top: 72%;
+    left: 3%;
+}
+
+#div8 {
+    width: 400px;
+    height: 700px;
+    top: 10%;
+    right: 2%;
+}
+
+ul.canvas-div-contents {
+}
+
+
+    ul.canvas-div-contents li {
+        padding: 4px 20px;
+        font-size: 12px;
+        
+    }
+
+
+ul.little-div-view {
+}
+
+    ul.little-div-view li {
+        float: left;
+        width: 33%;
+        text-align: center;
+        padding-bottom: 15px;
+        padding-top: 10px;
+    }
+    ul.little-div-view div {
+        font-size: 12px;
+        /*padding:3px;*/
+        margin-bottom: 5px;
+        width: 30px;
+        /*height: 30px;*/
+        min-width: 30px;
+        min-height: 30px;
+        line-height: 30px;
+        margin-left: 30%;
+    }
+
+.produce {
+    background-color: red;
+    color: #fff;
+}
+
+.balance {
+    background-color: orange;
+    color: #fff;
+}
+
+.emergence {
+    background-color: #0FCC11;
+    color: #fff;
+}
